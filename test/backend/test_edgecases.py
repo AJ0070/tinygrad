@@ -203,7 +203,6 @@ class TestUOpValidationIssue(unittest.TestCase):
   # these fail with UOp verification error.
   # we want more of these with diverse errors!
 
-  @unittest.skipIf(MOCKGPU or isinstance(Device[Device.DEFAULT].renderer, NIRRenderer), "hangs gpuocelot, NIR cannot render")
   def test_tensor_index_overflow(self):
     val = Tensor([1])
     big = val.expand(2**31 + 3)
