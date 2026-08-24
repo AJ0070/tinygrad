@@ -121,6 +121,7 @@ class TestPTXFailures(unittest.TestCase):
 
   @unittest.skipUnless(dtypes.half in Device[Device.DEFAULT].renderer.supported_dtypes(), "need half")
   def test_gated_define_acc_with_half_dtype(self):
+    Tensor.manual_seed(0)
     a = Tensor.randn(32, 32, dtype=dtypes.half).realize()
     b = Tensor.randn(34, 32, dtype=dtypes.half).realize()
     result = a.pad((1,1)).matmul(b, dtype=dtypes.half).numpy()
