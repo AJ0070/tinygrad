@@ -262,7 +262,7 @@ runs:
       shell: bash
       run: |
         sudo mkdir -p /usr/local/lib
-        sudo curl --output-dir /usr/local/lib -fLO https://github.com/tinygrad/gpuocelot/releases/download/v0.1.0/libgpuocelot.${{ runner.os == 'Linux' && 'so' || 'dylib' }}
+        sudo curl --output-dir /usr/local/lib -fLO https://github.com/AJ0070/gpuocelot/releases/download/v0.1.1-rc1/libgpuocelot.${{ runner.os == 'Linux' && 'so' || 'dylib' }}
 
     # **** WebGPU ****
 
